@@ -1,5 +1,5 @@
 const nome = "Eliot";
-const anos = 25;
+const anos = new Date().getFullYear() - 1999;
 const peso = 84;
 const alturaEmMetros = 1.80;
 

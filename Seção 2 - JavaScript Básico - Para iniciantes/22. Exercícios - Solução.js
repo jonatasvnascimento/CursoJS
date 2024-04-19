@@ -4,7 +4,7 @@ let simboloOperacao = prompt("Escolha uma Operacação: (+, -, *, /)");
 let resultado = 0;
 
 resultado = calculo(n1, n2, simboloOperacao);
-alert(resultado);
+console.log(resultado);
 
 function calculo(n1, n2, simboloOperacao) {
 

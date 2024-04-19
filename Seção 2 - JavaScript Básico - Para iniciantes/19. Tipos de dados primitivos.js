@@ -12,7 +12,7 @@ let novoArray = []; //Tipo object
 const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 numeros.forEach((n) => {
-    if(n == 2){
+    if (n == 2) {
         console.log("Aqui e o 2");
         return;
     }

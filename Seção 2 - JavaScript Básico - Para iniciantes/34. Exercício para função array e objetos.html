@@ -47,36 +47,58 @@
             padding: 10px;
             font-family: "Segoe UI";
         }
+
+        .Card {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
     </style>
 </head>
 
 <body>
 <h1>34. Exercício para função array e objetos</h1>
 
-<form id="formulario">
-    <fieldset>
-        <legend>Formulário</legend>
-        <div class="form-group">
-            <label for="nome">Nome:</label>
-            <input id="nome" class="campo_nome" type="text">
-        </div>
-        <div class="form-group">
-            <label for="sobrenome">Sobrenome:</label>
-            <input id="sobrenome" class="campo_sobrenome" type="text">
-        </div>
-        <div class="form-group">
-            <label for="peso">Peso:</label>
-            <input id="peso" class="campo_peso" type="text">
-        </div>
-        <div class="form-group">
-            <label for="altura">Altura:</label>
-            <input id="altura" class="campo_altura" type="text">
-        </div>
-        <div class="form-group">
-            <input class="btn_submit" type="submit" value="Enviar">
-        </div>
-    </fieldset>
-</form>
+<div class="App">
+    <div class="Card">
+        <form id="formulario">
+            <fieldset>
+                <legend>Formulário</legend>
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input id="nome" class="campo_nome" type="text">
+                </div>
+                <div class="form-group">
+                    <label for="sobrenome">Sobrenome:</label>
+                    <input id="sobrenome" class="campo_sobrenome" type="text">
+                </div>
+                <div class="form-group">
+                    <label for="peso">Peso:</label>
+                    <input id="peso" class="campo_peso" type="text">
+                </div>
+                <div class="form-group">
+                    <label for="altura">Altura:</label>
+                    <input id="altura" class="campo_altura" type="text">
+                </div>
+                <div class="form-group">
+                    <input class="btn_submit" type="submit" value="Enviar">
+                </div>
+            </fieldset>
+        </form>
+
+        <fieldset>
+            <legend>JSON</legend>
+            <div id="json"></div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Dados Formatado</legend>
+            <div id="dadosFormatado"></div>
+        </fieldset>
+
+    </div>
+</div>
+
 
 <script src="34. Exercício para função array e objetos.js"></script>
 </body>

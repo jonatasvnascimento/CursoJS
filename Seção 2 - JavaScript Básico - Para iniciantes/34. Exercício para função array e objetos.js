@@ -1,3 +1,5 @@
+// solução 1
+
 (function() {
     const dados = [];
 
@@ -29,3 +31,29 @@
         document.getElementById('dadosFormatado').innerText += `${nome} ${sobrenome} tem ${peso} kg e ${altura} de altura\n`;
     }
 })();
+
+// solução 2
+
+// function escopo() {
+//     const form = document.querySelector('.form');
+//     const nome = document.getElementById('nome').value = "JSON";
+//     const sobrenome = document.getElementById('sobrenome').value = "NEW";
+//     const peso = document.getElementById('peso').value = 90.35;
+//     const altura = document.getElementById('altura').value = 1.86;
+//
+//     form.onsubmit = (event) => {
+//         event.preventDefault();
+//         console.log(event);
+//         document.getElementById('json').innerText = JSON.stringify(event);
+//     }
+// }
+//
+// escopo()
+
+
+
+
+
+
+
+

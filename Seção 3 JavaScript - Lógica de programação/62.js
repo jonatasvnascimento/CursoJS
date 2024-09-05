@@ -16,5 +16,8 @@ function NumeroDivisivel(numero){
         return descricao;
 }
 
-let validacao = NumeroDivisivel(5);
-console.log(validacao);
+
+for (let i = 0; i < 100; i ++){
+    let validacao = NumeroDivisivel(i);
+    console.log(i, validacao);
+}

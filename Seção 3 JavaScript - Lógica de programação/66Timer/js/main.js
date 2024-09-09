@@ -2,25 +2,46 @@ const displayTimer = document.querySelector('.DisplayTimer')
 const btnInicar = document.querySelector('.btnInicar')
 const btnPausar = document.querySelector('.btnPausar')
 const btnZerar  = document.querySelector('.btnZerar')
+const slider = document.querySelector('.slider')
+const demo = document.querySelector('#demo')
 let segundos = 0;
 let minutos = 0;
 let horas = 0;
 let dias = 0;
 let timerId = null ;
+let sliderValue = 0;
+
+window.onload = function(){
+    resetSlider();
+}
+
+
+slider.addEventListener('input', (event) => {
+    demo.innerHTML = event.target.value;
+    sliderValue = event.target.value;
+})
+
+slider.addEventListener('change', (event) => {
+    PausarTimer();
+    IniciarTimer();
+})
 
 btnInicar.addEventListener('click', () => {
-    iniciarTimer();
+    IniciarTimer();
+    AddStileOnDisplayTime('active');
 })
 
 btnPausar.addEventListener('click', () => {
-    pausarTimer();
+    PausarTimer();
+    AddStileOnDisplayTime('desactive');
 })
 
 btnZerar.addEventListener('click', () => {
-    zerarTimer();
+    ZerarTimer();
+    AddStileOnDisplayTime('active');
 })
 
-function iniciarTimer(){
+function IniciarTimer(){
     if(timerId !== null) return;
 
     timerId = setInterval(() => {
@@ -41,23 +62,23 @@ function iniciarTimer(){
             dias++;
         }
 
-        formatTime()
-    }, 1000);
+        FormatTime()
+    }, sliderValue);
 }
 
 
-function pausarTimer(){
+function PausarTimer(){
     clearInterval(timerId);
     timerId = null;
 }
 
-function zerarTimer(){
-    pausarTimer();
-    resetTime()
-    formatTime()
+function ZerarTimer(){
+    PausarTimer();
+    ResetTime()
+    FormatTime()
 }
 
-function formatTime(){
+function FormatTime(){
     segundos = String(segundos).padStart(2, '0');
     minutos = String(minutos).padStart(2, '0');
     horas = String(horas).padStart(2, '0');
@@ -65,9 +86,28 @@ function formatTime(){
     displayTimer.innerHTML = `${dias}:${horas}:${minutos}:${segundos}`
 }
 
-function resetTime(){
+
+function ResetTime(){
     segundos = 0;
     minutos = 0;
     horas = 0;
     dias = 0;
+    resetSlider();
 }
+
+function AddStileOnDisplayTime(stile){
+    if (stile === 'active'){
+        displayTimer.style.color = 'black';
+    }else if (stile === 'desactive'){
+        displayTimer.style.color = 'red';
+    }
+}
+
+function resetSlider(){
+    slider.setAttribute('min', 0);
+    slider.setAttribute('max', 2000);
+    slider.value = 1000;
+    demo.innerHTML = 1000;
+}
+
+
